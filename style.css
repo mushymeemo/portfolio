@@ -1,4 +1,28 @@
-/* Global */
+/* Background Layer */
+.background-media {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.gif') no-repeat center center / cover;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+  animation: bgScroll 60s linear infinite;
+}
+
+/* Main content wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes bgScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +36,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
 header {
   background-color: #0d1b2a;
   padding: 1rem 2rem;
@@ -24,6 +47,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar .menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
 }
 
 .nav-links {
@@ -38,7 +75,6 @@ header {
   font-weight: bold;
 }
 
-/* Profile Picture */
 .profile-picture-frame {
   display: flex;
   justify-content: center;
@@ -54,9 +90,8 @@ header {
   object-fit: cover;
 }
 
-/* Hero */
 .hero {
-  background: linear-gradient(to right, #1b263b, #415a77);
+  background: rgba(0, 0, 0, 0.3);
   color: white;
   text-align: center;
   padding: 5rem 2rem;
@@ -83,11 +118,13 @@ header {
   background-color: #a5a58d;
 }
 
-/* Section */
 .section {
   padding: 4rem 2rem;
   max-width: 900px;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .section h2 {
@@ -96,7 +133,6 @@ header {
   color: #0d1b2a;
 }
 
-/* Cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -112,14 +148,12 @@ header {
   width: 280px;
 }
 
-/* Certificates */
 #certificatePreview iframe {
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-top: 1rem;
 }
 
-/* Media */
 .media-gallery {
   display: flex;
   flex-direction: column;
@@ -133,7 +167,6 @@ header {
   border: 1px solid #ccc;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -141,7 +174,6 @@ footer {
   color: white;
 }
 
-/* Scroll Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -151,4 +183,45 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  iframe,
+  video,
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
