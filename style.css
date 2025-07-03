@@ -1,0 +1,154 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+  background-color: #0d1b2a;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Profile Picture */
+.profile-picture-frame {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.profile-picture {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid #e0e1dd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #1b263b, #415a77);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #e0e1dd;
+  color: #1b263b;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #a5a58d;
+}
+
+/* Section */
+.section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0d1b2a;
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 280px;
+}
+
+/* Certificates */
+#certificatePreview iframe {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Media */
+.media-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.media-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #0d1b2a;
+  color: white;
+}
+
+/* Scroll Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
